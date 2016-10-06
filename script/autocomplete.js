@@ -52,8 +52,8 @@ app.directive('autocomplete', function() {
           $scope.completing = true;
           $scope.searchFilter = $scope.searchParam;
           $scope.selectedIndex = -1;
-        }
-
+        }else if($scope.searchParam === null) $scope.searchFilter = undefined;
+		
         // function thats passed to on-type attribute gets executed
         if($scope.onType)
           $scope.onType($scope.searchParam);
